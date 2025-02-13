@@ -10,8 +10,8 @@ class Pdf:
     __options__             = None
     """
         Change path windows or linux
-    """
-    __configuration__       = pdfkit.configuration(wkhtmltopdf = f"{os.getcwd()}\\windows\\bin\\wkhtmltopdf.exe")
+    """ 
+    __configuration__       = pdfkit.configuration(wkhtmltopdf = '/usr/local/bin/wkhtmltopdf')
 
     def __init__(self, url : str = None, content : str = None, options : dict = None):
         """
