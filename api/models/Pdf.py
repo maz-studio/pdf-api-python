@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # IMPORT ==============================================================================================
 import os
+import subprocess
 import pdfkit
 # CALSS ===============================================================================================
 class Pdf:
@@ -11,7 +12,8 @@ class Pdf:
     """
         Change path windows or linux
     """ 
-    __configuration__       = pdfkit.configuration(wkhtmltopdf = '/usr/local/bin/wkhtmltopdf')
+    wkhtmltopdf_path = subprocess.check_output(['which', 'wkhtmltopdf']).decode('utf-8').strip()
+    __configuration__       = pdfkit.configuration(wkhtmltopdf = wkhtmltopdf_path)
 
     def __init__(self, url : str = None, content : str = None, options : dict = None):
         """
