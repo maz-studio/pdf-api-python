@@ -1,0 +1,3 @@
+services:
+  - type: web
+    buildCommand: ./render-build.sh
