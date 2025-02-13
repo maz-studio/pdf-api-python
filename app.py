@@ -8,4 +8,5 @@ app                                                         = Flask(__name__)
 app.register_blueprint(pdf)
 # INIT ==========================================================================================================================
 if __name__ == "__main__": 
-    app.run(debug = True)
+    port = int(os.environ.get("PORT", 4000))
+    app.run(debug=True, host='0.0.0.0', port=port)
